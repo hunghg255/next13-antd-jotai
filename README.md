@@ -1,4 +1,4 @@
-# Nextjs + Recoil + Ant Design
+# Nextjs + Ant Design + Jotai + i18n
 
 ## Getting Started
 
