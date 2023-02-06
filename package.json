@@ -1,0 +1,56 @@
+{
+  "name": "next-13-antd-jotai",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "env-cmd -f .env.development next dev",
+    "build": "next build",
+    "start": "env-cmd -f .env.production next start",
+    "lint": "next lint",
+    "analyze": "cross-env ANALYZE=true next build",
+    "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@next/font": "^13.1.6",
+    "ahooks": "^3.5.1",
+    "antd": "^4.21.4",
+    "classnames": "^2.3.1",
+    "cookies-next": "^2.1.1",
+    "dayjs": "^1.11.4",
+    "jotai": "^2.0.0",
+    "next": "^13.1.6",
+    "next-i18next": "^11.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "sharp": "^0.30.7",
+    "umi-request": "^1.4.0"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "^12.2.1",
+    "@types/node": "18.7.16",
+    "@types/react": "18.0.18",
+    "@types/react-dom": "18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.33.1",
+    "@typescript-eslint/parser": "^5.33.1",
+    "env-cmd": "^10.1.0",
+    "eslint": "8.23.0",
+    "eslint-config-next": "12.3.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.0.3",
+    "sass": "^1.54.9",
+    "typescript": "4.8.3"
+  },
+  "browserslist": [
+    ">0.3%",
+    "not ie 11",
+    "not dead",
+    "not op_mini all"
+  ],
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "npm run lint"
+    ]
+  }
+}
