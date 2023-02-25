@@ -13,14 +13,14 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@next/font": "^13.1.6",
+    "@next/font": "^13.2.1",
     "ahooks": "^3.5.1",
     "antd": "^4.21.4",
     "classnames": "^2.3.1",
     "cookies-next": "^2.1.1",
     "dayjs": "^1.11.4",
     "jotai": "^2.0.0",
-    "next": "^13.1.6",
+    "next": "^13.2.1",
     "next-i18next": "^11.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
