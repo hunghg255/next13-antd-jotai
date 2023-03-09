@@ -1,13 +1,14 @@
 import '../styles/globals.scss';
 
-import type { AppProps } from 'next/app';
-import { appWithTranslation } from 'next-i18next';
-import nextI18nConfig from '../next-i18next.config';
-import AppLayout from '@layout/AppLayout';
 import ErrorBoundary from '@components/ErrorBoundary';
-import type { ReactElement, ReactNode } from 'react';
+import AppLayout from '@layout/AppLayout';
 import type { NextPage } from 'next';
+import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { appWithTranslation } from 'next-i18next';
+import type { ReactElement, ReactNode } from 'react';
+
+import nextI18nConfig from '../next-i18next.config';
 
 export type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;

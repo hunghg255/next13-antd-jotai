@@ -1,9 +1,8 @@
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-
 import Home from '@components/Home';
-import MainLayout from '@layout/MainLayout';
-import { ReactElement } from 'react';
 import DatePicker from '@components/UI/DatePicker/DatePicker';
+import MainLayout from '@layout/MainLayout';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { ReactElement } from 'react';
 
 const HomePage = () => {
   return (
