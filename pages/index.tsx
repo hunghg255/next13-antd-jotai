@@ -1,6 +1,6 @@
 import Home from '@components/Home';
-import DatePicker from '@components/UI/DatePicker/DatePicker';
 import MainLayout from '@layout/MainLayout';
+import { DatePicker } from 'antd';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { ReactElement } from 'react';
 
