@@ -1,4 +1,4 @@
-# Nextjs + Ant Design + Jotai + i18n
+# Nextjs + Ant Design V5 + Jotai + i18n
 
 ## Getting Started
 
