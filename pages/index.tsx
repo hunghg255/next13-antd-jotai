@@ -14,7 +14,7 @@ const HomePage = () => {
             title: 'Home',
           },
           {
-            title: <a href=''>Application Center</a>,
+            title: <a href=''>Application Center </a>,
           },
           {
             title: <a href=''>Application List</a>,
