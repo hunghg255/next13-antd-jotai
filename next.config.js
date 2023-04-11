@@ -9,6 +9,7 @@ const nextConfig = {
   // i18n
   i18n,
   swcMinify: true,
+  transpilePackages: ['antd'],
 
   // config env
   publicRuntimeConfig: {

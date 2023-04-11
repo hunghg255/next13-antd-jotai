@@ -1,4 +1,5 @@
 import 'antd/dist/reset.css';
+import '../public/antd.min.css';
 import '../styles/globals.scss';
 
 import ErrorBoundary from '@components/ErrorBoundary';
