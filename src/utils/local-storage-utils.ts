@@ -8,28 +8,28 @@ const localStorageUtils = {
         }
         return data;
       }
-    } catch (error) {}
+    } catch {}
   },
   set: (key: string, value: any) => {
     try {
       if (typeof window !== undefined) {
         localStorage.setItem(key, JSON.stringify(value));
       }
-    } catch (error) {}
+    } catch {}
   },
   remove: (key: string) => {
     try {
       if (typeof window !== undefined) {
         localStorage.removeItem(key);
       }
-    } catch (error) {}
+    } catch {}
   },
   clear: () => {
     try {
       if (typeof window !== undefined) {
         localStorage.clear();
       }
-    } catch (error) {}
+    } catch {}
   },
 };
 

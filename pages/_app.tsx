@@ -4,23 +4,21 @@ import '../styles/globals.scss';
 
 import ErrorBoundary from '@components/ErrorBoundary';
 import AppLayout from '@layout/AppLayout';
+import { Waterfall } from '@next/font/google';
 import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { appWithTranslation } from 'next-i18next';
-import type { ReactElement, ReactNode } from 'react';
+import { ReactElement, ReactNode } from 'react';
 
 import nextI18nConfig from '../next-i18next.config';
 
 export type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
 };
-
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
-
-import { Waterfall } from '@next/font/google';
 
 const WaterfallFont = Waterfall({
   subsets: ['latin'],
@@ -29,7 +27,7 @@ const WaterfallFont = Waterfall({
 });
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-  const getLayout = Component.getLayout ? Component.getLayout : (page: any) => page;
+  const getLayout = Component.getLayout ?? ((page: any) => page);
 
   return (
     <>
@@ -56,4 +54,5 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   );
 }
 
+// @ts-ignore
 export default appWithTranslation(MyApp, nextI18nConfig);

@@ -1,3 +1,4 @@
+/* eslint-disable require-await */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import TokenManager, { injectBearer } from 'brainless-token-manager';
 import { ENV } from 'src/utils/env';
@@ -35,16 +36,14 @@ const tokenManager = new TokenManager({
       refresh_token: '',
     };
   },
-  onRefreshTokenSuccess: ({ token, refresh_token }) => {},
+  onRefreshTokenSuccess: () => {},
   onInvalidRefreshToken: async () => {
     // Logout
   },
 });
 
 const privateRequest = async (request: any, suffixUrl: string, configs?: any) => {
-  const token: string = configs?.token
-    ? configs?.token
-    : ((await tokenManager.getToken()) as string);
+  const token: string = configs?.token ?? ((await tokenManager.getToken()) as string);
 
   return request(suffixUrl, injectBearer(token, configs));
 };
@@ -82,9 +81,9 @@ export const checkTokenExpiredOnServer = async (ctx: any) => {
 
     //   return res?.token;
     // }
-    return null;
-  } catch (error) {
-    return null;
+    return undefined;
+  } catch {
+    return undefined;
   }
 };
 
