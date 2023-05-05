@@ -19,17 +19,33 @@
       "typescript": {}
     }
   },
-  "plugins": ["@typescript-eslint", "simple-import-sort", "import"],
+  "plugins": ["@typescript-eslint", "import"],
   "rules": {
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "error",
     "react/jsx-key": "error",
-    "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error",
     "import/newline-after-import": "error",
     "import/no-duplicates": "error",
     // Enforce import order
-    // "import/order": ["error"],
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "groups": [
+          "external",
+          "builtin",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+          "object",
+          "type"
+        ]
+      }
+    ],
     // Imports should come first
     "import/first": "error",
     // Other import rules

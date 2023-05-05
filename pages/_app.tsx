@@ -1,17 +1,17 @@
 import 'antd/dist/reset.css';
-import '../public/antd.min.css';
 import '../styles/globals.scss';
+import '../public/antd.min.css';
 
+import { appWithTranslation } from 'next-i18next';
+import { Waterfall } from 'next/font/google';
+import Head from 'next/head';
+import { ReactElement, ReactNode } from 'react';
 import ErrorBoundary from '@components/ErrorBoundary';
 import AppLayout from '@layout/AppLayout';
-import { Waterfall } from '@next/font/google';
+import nextI18nConfig from '../next-i18next.config';
+
 import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
-import Head from 'next/head';
-import { appWithTranslation } from 'next-i18next';
-import { ReactElement, ReactNode } from 'react';
-
-import nextI18nConfig from '../next-i18next.config';
 
 export type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
