@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import TokenManager, { injectBearer } from 'brainless-token-manager';
 import { extend } from 'umi-request';
+
 import { ENV } from 'src/utils/env';
 
 const REQ_TIMEOUT = 25 * 1000;

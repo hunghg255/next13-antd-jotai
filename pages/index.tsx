@@ -1,6 +1,8 @@
+import { ReactElement } from 'react';
+
 import { Breadcrumb, DatePicker, Steps } from 'antd';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { ReactElement } from 'react';
+
 import Home from '@components/Home';
 import MainLayout from '@layout/MainLayout';
 

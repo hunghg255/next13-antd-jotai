@@ -1,4 +1,8 @@
 {
+  "env": {
+    "es2020": true,
+    "browser": true
+  },
   "parser": "@typescript-eslint/parser",
   "extends": [
     "next/core-web-vitals",
@@ -26,24 +30,40 @@
     "react/jsx-key": "error",
     "import/newline-after-import": "error",
     "import/no-duplicates": "error",
-    // Enforce import order
     "import/order": [
-      "error",
+      2,
       {
+        "groups": ["builtin", "external", "internal"],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "@+(symbols)",
+            "group": "internal"
+          },
+          {
+            "pattern": "@+(api|components|compositions|directives|enums|interfaces|layouts|modules|services|utils|views|hooks)/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "@/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "*.scss",
+            "group": "index",
+            "patternOptions": { "matchBase": true }
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"],
+        "newlines-between": "always",
         "alphabetize": {
           "order": "asc",
           "caseInsensitive": true
-        },
-        "groups": [
-          "external",
-          "builtin",
-          "internal",
-          "parent",
-          "sibling",
-          "index",
-          "object",
-          "type"
-        ]
+        }
       }
     ],
     // Imports should come first
