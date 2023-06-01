@@ -5,10 +5,10 @@ import '../public/antd.min.css';
 import { ReactElement, ReactNode } from 'react';
 
 import type { NextPage } from 'next';
-import { appWithTranslation } from 'next-i18next';
 import type { AppProps } from 'next/app';
 import { Waterfall } from 'next/font/google';
 import Head from 'next/head';
+import { appWithTranslation } from 'next-i18next';
 
 import ErrorBoundary from '@components/ErrorBoundary';
 import { useTest } from '@hooks/test';
