@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@ant-design/static-style-extract": "^1.0.1",
-    "@hunghg255/eslint-config-react": "^0.0.12",
+    "@hunghg255/eslint-config-react": "^0.0.16",
     "@next/bundle-analyzer": "^12.2.1",
     "@total-typescript/ts-reset": "^0.4.2",
     "@types/node": "18.7.16",
@@ -39,7 +39,7 @@
     "@types/react-dom": "18.0.6",
     "cross-env": "^7.0.3",
     "env-cmd": "^10.1.0",
-    "eslint": "8.23.0",
+    "eslint": "^8.43.0",
     "eslint-config-next": "12.3.0",
     "husky": "^8.0.0",
     "lint-staged": "^13.0.3",
