@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 // Check auth from server side here
-export async function middleware() {
+export function middleware() {
   return NextResponse.next();
 }
 
