@@ -1,6 +1,4 @@
-import 'antd/dist/reset.css';
 import '../styles/globals.scss';
-import '../public/antd.min.css';
 
 import { ReactElement, ReactNode } from 'react';
 

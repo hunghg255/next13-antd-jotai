@@ -5,15 +5,13 @@
   "scripts": {
     "dev": "env-cmd -f .env.clientDev next dev",
     "build": "next build",
-    "buildDev": "npm run prebuild && cp -f .env.clientDev .env && next build",
+    "buildDev": "cp -f .env.clientDev .env && next build",
     "buildProd": "cp -f .env.clientProd .env && next build",
     "start": "env-cmd -f .env.clientProd next start",
     "lint": "next lint",
     "analyze": "cross-env ANALYZE=true next build",
     "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
     "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build",
-    "predev": "ts-node --project ./tsconfig.node.json ./scripts/genAntdCss.tsx",
-    "prebuild": "cross-env NODE_ENV=production ts-node --project ./tsconfig.node.json ./scripts/genAntdCss.tsx",
     "verify-commit": "verify-commit-msg",
     "prepare": "git-scm-hooks",
     "release": "bumpp -r",
@@ -37,6 +35,7 @@
     "umi-request": "^1.4.0"
   },
   "devDependencies": {
+    "@ant-design/cssinjs": "^1.18.2",
     "@ant-design/static-style-extract": "^1.0.2",
     "@hunghg255/eslint-config-react": "^0.0.26",
     "@next/bundle-analyzer": "^12.3.4",
