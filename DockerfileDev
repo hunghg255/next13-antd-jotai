@@ -10,10 +10,12 @@ RUN apk add --no-cache libc6-compat
 
 WORKDIR /app
 
-COPY package\*.json ./
+COPY package.json ./
+COPY package-lock.json ./
 COPY patches ./patches
 
-RUN npm install --legacy-peer-deps
+RUN npm install
+RUN npm install -g --arch=x64 --platform=linux --libc=glibc sharp
 
 # Rebuild the source code only when needed
 
@@ -21,9 +23,8 @@ FROM base AS builder
 
 WORKDIR /app
 
-COPY --from=deps /app/node_modules ./node_modules
-
 COPY . .
+COPY --from=deps /app/node_modules ./node_modules
 
 RUN npm run buildDev
 
@@ -31,6 +32,9 @@ FROM base AS runner
 WORKDIR /app
 
 ENV NODE_ENV production
+ENV NEXT_SHARP_PATH=/usr/local/lib/node_modules/sharp
+
+COPY --from=deps /usr/local/lib/node_modules/sharp /usr/local/lib/node_modules/sharp
 COPY --from=builder /app/next.config.js ./
 COPY --from=builder /app/public ./public
 

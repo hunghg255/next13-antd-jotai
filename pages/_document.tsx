@@ -32,16 +32,13 @@ MyDocument.getInitialProps = async (ctx: DocumentContext) => {
   fileName = doExtraStyle({
     cache,
   });
-  return {
-    ...initialProps,
-    styles: (
-      <>
-        {initialProps.styles}
-        {/* 1.2 inject css */}
-        {fileName && <link rel='stylesheet' href={`/${fileName}`} />}
-      </>
-    ),
-  };
+
+  if (fileName) {
+    // @ts-ignore
+    initialProps.styles.unshift(<link rel='stylesheet' href={`/${fileName}`} />);
+  }
+
+  return initialProps;
 };
 
 export default MyDocument;
