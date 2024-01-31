@@ -25,7 +25,10 @@ export function doExtraStyle({
 
   const css = extractStyle(cache, true);
   if (!css) {
-    return '';
+    return {
+      url: '',
+      fallback: '',
+    };
   }
 
   const md5 = createHash('md5');
@@ -34,12 +37,19 @@ export function doExtraStyle({
   const fullpath = path.join(outputCssPath, fileName);
 
   const res = `_next/static/css/${dir}/${fileName}`;
+  const resFallback = `api/dynamic-css?fileName=${fileName}&etag=${hash}`;
 
   if (fs.existsSync(fullpath)) {
-    return res;
+    return {
+      url: res,
+      fallback: resFallback,
+    };
   }
 
   fs.writeFileSync(fullpath, css);
 
-  return res;
+  return {
+    url: res,
+    fallback: resFallback,
+  };
 }

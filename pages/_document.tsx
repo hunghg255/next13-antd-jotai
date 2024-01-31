@@ -15,30 +15,37 @@ const MyDocument = () => (
 
 MyDocument.getInitialProps = async (ctx: DocumentContext) => {
   const cache = createCache();
-  let fileName = '';
+
   const originalRenderPage = ctx.renderPage;
+  let isReady: boolean = false;
   ctx.renderPage = () =>
     originalRenderPage({
-      enhanceApp: (App) => (props) =>
-        (
+      enhanceApp: (App) => (props) => {
+        isReady = !!props.__N_SSP;
+        return (
           <StyleProvider cache={cache}>
             <App {...props} />
           </StyleProvider>
-        ),
+        );
+      },
     });
 
   const initialProps = await Document.getInitialProps(ctx);
   // 1.1 extract style which had been used
-  fileName = doExtraStyle({
+  const { url, fallback } = doExtraStyle({
     cache,
   });
 
-  if (fileName) {
-    // @ts-ignore
-    initialProps.styles.unshift(<link rel='stylesheet' href={`/${fileName}`} />);
-  }
-
-  return initialProps;
+  return {
+    ...initialProps,
+    styles: (
+      <>
+        {initialProps.styles}
+        {/* 1.2 inject css */}
+        {url && <link rel='stylesheet' href={isReady ? `/${fallback}` : `/${url}`} />}
+      </>
+    ),
+  };
 };
 
 export default MyDocument;

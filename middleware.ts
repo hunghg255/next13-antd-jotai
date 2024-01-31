@@ -8,7 +8,7 @@ export function middleware() {
 // See "Matching Paths" below to learn more
 export const config = {
   matcher: [
-    '/((?!api|static|_next/static|_next/images|svgIcon|svg|logo|lottie|styles-antd|locales|/_next/data|robots.txt|public|images|manifest.json|sw.js|favicon.ico|workbox-*).*)',
+    '/((?!api|dynamic-css|static|_next/static|_next/static/css|_next/static/css/antd-output|_next/images|svgIcon|svg|logo|lottie|styles-antd|locales|/_next/data|robots.txt|public|images|manifest.json|sw.js|favicon.ico|workbox-*).*)',
     '/',
   ],
 };
