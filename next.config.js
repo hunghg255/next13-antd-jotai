@@ -32,13 +32,20 @@ const nextConfig = {
   i18n,
   swcMinify: true,
   output: 'standalone',
-
   // config env
   publicRuntimeConfig: {
     NODE_ENV: process.env.NODE_ENV,
     APP_API_URL: process.env.NEXT_PUBLIC_APP_API_URL,
     LOCAL_STORAGE_KEY: process.env.NEXT_PUBLIC_LOCAL_STORAGE_KEY,
   },
+  transpilePackages: [
+    'rc-util',
+    '@ant-design',
+    '@ant-design/pro-editor',
+    'antd',
+    'rc-pagination',
+    'rc-picker',
+  ],
   images: {
     minimumCacheTTL: 60,
     formats: ['image/webp'],

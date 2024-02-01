@@ -1,6 +1,8 @@
 import { ReactElement } from 'react';
 
 import { Breadcrumb, DatePicker, Steps } from 'antd';
+import Image from 'next/image';
+import Link from 'next/link';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import Home from '@components/Home';
@@ -45,6 +47,10 @@ const HomePage = () => {
         ]}
       />
       <DatePicker />
+
+      <Image src='/images/demo.jpg' width={500} height={800} alt='' />
+
+      <Link href={'/ssr/1'}>Page SSR</Link>
     </div>
   );
 };
@@ -57,7 +63,7 @@ HomePage.getLayout = function getLayout(page: ReactElement) {
   );
 };
 
-export async function getStaticProps({ locale }: any) {
+export async function getServerSideProps({ locale }: any) {
   return {
     props: {
       ...(await serverSideTranslations(locale, ['common', 'home'])),
