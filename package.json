@@ -32,7 +32,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sharp": "^0.33.1",
-    "umi-request": "^1.4.0"
+    "umi-request": "^1.4.0",
+    "unloger": "^0.0.3"
   },
   "devDependencies": {
     "@ant-design/cssinjs": "^1.18.2",

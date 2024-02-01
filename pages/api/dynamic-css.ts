@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable unicorn/prefer-module */
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import fs from 'node:fs';
@@ -10,7 +11,8 @@ const baseDir = path.resolve(__dirname, '../../../static/css');
 
 const outputCssPath = path.join(baseDir, dir);
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  const { color } = await import('unloger/color');
   const { fileName, etag } = req.query;
 
   if (!fileName) {
@@ -21,6 +23,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (!fs.existsSync(filePath)) {
     res.status(404).end(); // Error 404 Not Found
   }
+
+  console.log(color.green(`[dynamic-css] ${filePath}`));
 
   const ifNoneMatch = req.headers['if-none-match'];
   if (ifNoneMatch === etag) {
