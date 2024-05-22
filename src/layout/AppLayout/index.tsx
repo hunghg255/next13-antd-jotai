@@ -1,7 +1,11 @@
-const AppLayout = ({ children, WaterfallFont }: any) => {
+import { Toaster } from 'sonner';
+
+const AppLayout = ({ children }: any) => {
   return (
     <>
-      <main className={WaterfallFont.variable}>{children}</main>
+      <main>{children}</main>
+
+      <Toaster position='top-center' />
     </>
   );
 };

@@ -1,75 +1,89 @@
-.h1-bold {
-  font-weight: 600;
-  font-size: 40px;
-  line-height: 60px;
+.heading1-extra-bold {
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 80px;
+  font-family: var(--fontRoboto), sans-serif !important;
 }
-.h1-regular {
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 60px;
-}
-.h2-bold {
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 48px;
-}
-.h2-regular {
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 48px;
-}
-.h3-bold {
+.heading2-bold {
   font-weight: 700;
+  font-size: 40px;
+  line-height: 52px;
+  font-family: var(--fontRoboto), sans-serif !important;
+}
+.heading3-bold {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 44px;
+  font-family: var(--fontRoboto), sans-serif !important;
+}
+.heading3-semi-bold {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 44px;
+  font-family: var(--fontRoboto), sans-serif !important;
+}
+.heading4-semi-bold {
+  font-weight: 600;
   font-size: 24px;
   line-height: 36px;
+  font-family: var(--fontRoboto), sans-serif !important;
+}
+.heading5-medium {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  font-family: var(--fontRoboto), sans-serif !important;
+}
+.heading5-bold {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+  font-family: var(--fontRoboto), sans-serif !important;
+}
+.heading6-bold {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+  font-family: var(--fontRoboto), sans-serif !important;
+}
+.title1-semi-bold {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: var(--fontRoboto), sans-serif !important;
+}
 
-  @media (max-width: 768px) {
-    font-size: 16px;
-    line-height: 24px;
-  }
-}
-.h3-regular {
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 36px;
-}
-.body-bold {
+.title2-semi-bold {
   font-weight: 600;
-  font-size: 20px;
-  line-height: 32px;
+  font-size: 14px;
+  line-height: 22px;
+  font-family: var(--fontRoboto), sans-serif !important;
 }
-.body-regular {
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 32px;
-}
-.body-2-bold {
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 24px;
-}
-.body-2-regular {
+
+.body1 {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+  font-family: var(--fontRoboto), sans-serif !important;
 }
-.body-3-bold {
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 24px;
-}
-.body-3-regular {
+
+.body2 {
   font-weight: 400;
   font-size: 14px;
-  line-height: 24px;
+  line-height: 22px;
+  font-family: var(--fontRoboto), sans-serif !important;
 }
-.body-4-bold {
+
+.caption1-semi-bold {
   font-weight: 600;
   font-size: 12px;
-  line-height: 16px;
+  line-height: 18px;
+  font-family: var(--fontRoboto), sans-serif !important;
 }
-.body-4-regular {
+
+.caption2 {
   font-weight: 400;
   font-size: 12px;
-  line-height: 16px;
+  line-height: 18px;
+  font-family: var(--fontRoboto), sans-serif !important;
 }

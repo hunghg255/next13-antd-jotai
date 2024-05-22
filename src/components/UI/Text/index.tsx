@@ -2,50 +2,27 @@ import React from 'react';
 
 import classNames from 'classnames';
 
+import { TColor } from 'styles/color/color.variables';
+
 interface TextProps {
   children: React.ReactNode;
   type?:
-    | 'h1-bold'
-    | 'h1-regular'
-    | 'h2-bold'
-    | 'h2-regular'
-    | 'h3-bold'
-    | 'h3-regular'
-    | 'body-bold'
-    | 'body-regular'
-    | 'body-2-bold'
-    | 'body-2-regular'
-    | 'body-3-bold'
-    | 'body-3-regular'
-    | 'body-4-bold'
-    | 'body-4-regular'
+    | 'heading1-extra-bold'
+    | 'heading2-bold'
+    | 'heading3-bold'
+    | 'heading3-semi-bold'
+    | 'heading4-semi-bold'
+    | 'heading5-medium'
+    | 'heading5-bold'
+    | 'heading6-bold'
+    | 'title1-semi-bold'
+    | 'title2-semi-bold'
+    | 'body1'
+    | 'body2'
+    | 'caption1-semi-bold'
+    | 'caption2'
     | undefined;
-  color?:
-    | 'cwhite'
-    | 'cblack'
-    | 'primary-1'
-    | 'primary-2'
-    | 'primary-3'
-    | 'primary-4'
-    | 'primary-5'
-    | 'secondary-1'
-    | 'secondary-2'
-    | 'secondary-3'
-    | 'secondary-4'
-    | 'secondary-5'
-    | 'neutral-1'
-    | 'neutral-2'
-    | 'neutral-3'
-    | 'neutral-4'
-    | 'neutral-5'
-    | 'neutral-6'
-    | 'neutral-7'
-    | 'link-1'
-    | 'link-2'
-    | 'link-3'
-    | 'link-4'
-    | 'link-5'
-    | undefined;
+  color?: TColor;
   disabled?: boolean;
   state?: null | 'disable';
   className?: string;

@@ -17,3 +17,7 @@ next.config.js
 
 next-i18next.config.js
 .dockerignore
+scripts/genColorCss.ts
+styles/color/color.variables.ts
+styles/icon/icon-css.css
+

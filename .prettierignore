@@ -13,3 +13,5 @@ node_modules
 
 .swc
 .dockerignore
+styles/color/color.variables.ts
+styles/icon/icon-css.css
