@@ -1,5 +1,4 @@
 const { i18n } = require('./next-i18next.config');
-const { withHydrationOverlay } = require('next-hydration-overlay/next');
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
@@ -8,22 +7,19 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const isProd = process.env.NODE_ENV === 'production';
 
 const securityHeaders = [
+  { key: 'X-DNS-Prefetch-Control', value: 'on' },
+  { key: 'X-XSS-Protection', value: '1; mode=block' },
+  { key: 'Strict-Transport-Security', value: 'max-age=604800' },
+  { key: 'Content-Security-Policy', value: 'frame-ancestors https://app.safe.global' },
+  { key: 'X-Content-Type-Options', value: 'nosniff' },
+  { key: 'Referrer-Policy', value: 'strict-origin' },
   {
-    key: 'X-DNS-Prefetch-Control',
-    value: 'on',
+    key: 'Permissions-Policy',
+    value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
   },
-  {
-    key: 'X-XSS-Protection',
-    value: '1; mode=block',
-  },
-  {
-    key: 'X-Frame-Options',
-    value: 'SAMEORIGIN',
-  },
-  {
-    key: 'X-Content-Type-Options',
-    value: 'nosniff',
-  },
+  { key: 'Access-Control-Allow-Origin', value: '*' },
+  { key: 'Access-Control-Allow-Methods', value: 'GET' },
+  { key: 'Access-Control-Allow-Headers', value: 'X-Requested-With, content-type, Authorization' },
 ];
 
 /** @type {import('next').NextConfig} */
@@ -86,4 +82,4 @@ const nextConfig = {
   poweredByHeader: false,
 };
 
-module.exports = isProd ? nextConfig : withHydrationOverlay()(withBundleAnalyzer(nextConfig));
+module.exports = isProd ? nextConfig : withBundleAnalyzer(nextConfig);

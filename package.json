@@ -54,7 +54,6 @@
     "eslint-config-next": "^13.5.6",
     "esno": "^4.7.0",
     "git-scm-hooks": "^0.0.11",
-    "next-hydration-overlay": "^0.0.17",
     "prettier": "^2.8.8",
     "sass": "^1.77.2",
     "ts-node": "^10.9.2",
