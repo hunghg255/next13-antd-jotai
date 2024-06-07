@@ -16,10 +16,13 @@
   },
 
   "iconify.color": "#ddd",
-  "iconify.customCollectionJsonPaths": ["./styles/t4font/t4font-collection.json"],
+  "iconify.customCollectionJsonPaths": ["./styles/icon/icon-collection.json"],
   "iconify.delimiters": ["-"],
-  "iconify.prefixes": ["", "t4font"],
+  "iconify.prefixes": ["", "icon"],
   "iconify.inplace": false,
   "iconify.annotations": true,
-  "iconify.languageIds": ["typescript", "typescriptreact"]
+  "iconify.languageIds": ["typescript", "typescriptreact"],
+
+  "color-preview.annotations": true,
+  "color-preview.colorDirectoryPath": "./styles/color/color-preview-vscode.json"
 }

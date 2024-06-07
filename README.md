@@ -12,6 +12,37 @@ npm install or yarn
 npm run dev or yarn dev
 ```
 
+## Gen Color
+
+1. Update color to `styles/color-preview.json`
+
+- Add value
+  Example:
+
+```js
+{
+   Light: {
+     primary: {
+       "8": '#FF0000',
+     }
+   }
+}
+```
+
+## Gen Font
+
+```js
+1. Copy file svg to `public/svgIcon`
+2. Run command: `npm run gen-font`
+3. Check component `Icon` in `src/components/UI/IconFont/Icon.tsx`
+```
+
+More: Install extenstion to preview icon: [Icon-Preivew](https://marketplace.visualstudio.com/items?itemName=hunghg255.iconify-preview)
+
+## Commit Convention
+
+[commit-convention](.github/commit-convention.md)
+
 ## Library Docs
 
 ```md
