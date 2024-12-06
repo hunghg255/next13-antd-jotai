@@ -1,5 +1,4 @@
 /* eslint-disable no-console */
-/* eslint-disable unicorn/prefer-module */
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import fs from 'node:fs';
 import path from 'node:path';
