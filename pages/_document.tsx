@@ -21,7 +21,7 @@ MyDocument.getInitialProps = async (ctx: DocumentContext) => {
   ctx.renderPage = () =>
     originalRenderPage({
       enhanceApp: (App) => (props) => {
-        isReady = !!props.__N_SSP;
+        isReady = !!props.__N_SSG;
         return (
           <StyleProvider cache={cache}>
             <App {...props} />
