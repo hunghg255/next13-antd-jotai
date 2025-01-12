@@ -49,7 +49,7 @@
     "@types/react-dom": "19.0.0",
     "bumpp": "^9.8.1",
     "cross-env": "^7.0.3",
-    "csvgtocss": "^0.1.1",
+    "csvgtocss": "^0.1.2",
     "env-cmd": "^10.1.0",
     "eslint": "^8.57.1",
     "eslint-config-next": "^13.5.7",
